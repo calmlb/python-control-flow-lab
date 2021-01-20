@@ -6,42 +6,40 @@
 
 seasons = ['Winter', 'Spring', 'Summer', 'Autumn']
 input_month = input("Please enter the month of the year as three characters (Jan - Dec: )")
-print (input_month)
 
 # 2. Then prompts the user to enter the day of the month: 
 #      Enter the day of the month:
-input_day = str(input("Please enter the day of the month: "))
-print (input_day)
+input_day = int(input("Please enter the day of the month: "))
 
-if input_month in ('Jan', 'Feb', 'Mar'):
+if input_month in ('Dec', 'Jan', 'Feb'):
     if input_month == 'Dec' and input_day >= 21:
         season = seasons[0]
     elif input_month == 'Dec' and input_day < 21:
         season = seasons[3]
     else:
         season = seasons[0]
-elif input_month in ('Apr', 'May', 'Jun'):
+elif input_month in ('Mar', 'Apr', 'May'):
     if input_month == 'Mar' and input_day >= 20:
         season = seasons[1]
     elif input_month == 'Mar' and input_day < 20:
         season = seasons[0]
     else:
         season = seasons[1]
-elif input_month in ('Jul', 'Aug', 'Sep'):
+elif input_month in ('Jun', 'Jul', 'Aug'):
     if input_month == 'Jun' and input_day >= 21:
         season = seasons[2]
     elif input_month == 'Jun' and input_day < 21:
         season = seasons[1]
     else:
         season = seasons[2]
-elif input_month in ('Oct', 'Nov', 'Dec'):
+elif input_month in ('Sep', 'Oct', 'Nov'):
     if input_month == 'Sep' and input_day >= 21:
         season = seasons[3]
     elif input_month == 'Sep' and input_day < 21:
         season = seasons[2]
     else:
         season = seasons[3]
-print(input_month + input_day + " is in season " + season + ".")
+print(f"{input_month} {input_day} is in {season}")
 
   
 
