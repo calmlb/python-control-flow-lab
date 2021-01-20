@@ -13,26 +13,45 @@ print (input_month)
 input_day = str(input("Please enter the day of the month: "))
 print (input_day)
 
+if input_month in ('Jan', 'Feb', 'Mar'):
+    if input_month == 'Dec' and input_day >= 21:
+        season = seasons[0]
+    elif input_month == 'Dec' and input_day < 21:
+        season = seasons[3]
+    else:
+        season = seasons[0]
+elif input_month in ('Apr', 'May', 'Jun'):
+    if input_month == 'Mar' and input_day >= 20:
+        season = seasons[1]
+    elif input_month == 'Mar' and input_day < 20:
+        season = seasons[0]
+    else:
+        season = seasons[1]
+elif input_month in ('Jul', 'Aug', 'Sep'):
+    if input_month == 'Jun' and input_day >= 21:
+        season = seasons[2]
+    elif input_month == 'Jun' and input_day < 21:
+        season = seasons[1]
+    else:
+        season = seasons[2]
+elif input_month in ('Oct', 'Nov', 'Dec'):
+    if input_month == 'Sep' and input_day >= 21:
+        season = seasons[3]
+    elif input_month == 'Sep' and input_day < 21:
+        season = seasons[2]
+    else:
+        season = seasons[3]
+print(input_month + input_day + " is in season " + season + ".")
+
+  
+
 # 3. Calculate what season it is based upon this chart:
 #      Dec 21 - Mar 19: Winter
 #      Mar 20 - Jun 20: Spring
 #      Jun 21 - Sep 21: Summer
 #      Sep 22 - Dec 20: Fall
-if input_month in ('Jan', 'Feb', 'Mar'):
-    season = seasons[0]
-    print(input_month + input_day + " is in season " + season + ".")
 
-elif input_month in ('Apr', 'May', 'Jun'):
-    season = seasons[1]
-    print(input_month + input_day + " is in season " + season + ".")
 
-elif input_month in ('Jul', 'Aug', 'Sep'):
-    season = seasons[2]
-    print(input_month + input_day + " is in season " + season + ".")
-else:
-    input_month in ('Oct', 'Nov', 'Dec')
-    season = seasons[3]
-    print(input_month + input_day + " is in season " + season + ".")
 
 # 4. Print the result as follows:
 #      <Mmm> <dd> is in <season> 
